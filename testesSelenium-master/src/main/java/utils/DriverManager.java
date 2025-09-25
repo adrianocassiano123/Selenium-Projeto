@@ -15,10 +15,10 @@ public class DriverManager {
 		return driver;
 	}
 
-	public static void quitDriver() { //Finaliza o 
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
+	public static void quitDriver() { //Fecha a tela ao finalizar
+//		if (driver != null) {
+//			driver.quit();
+//			driver = null;
+//		}
 	}
 }

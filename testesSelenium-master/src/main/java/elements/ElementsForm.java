@@ -63,17 +63,21 @@ public class ElementsForm {
     @FindBy(id = "currentAddress")
     protected WebElement endereco;
 
-    // Estado e Cidade
+    // Estado
     @FindBy(id = "react-select-3-input")
     protected WebElement comboEstado;
 
+    // Cidade
     @FindBy(id = "react-select-4-input")
     protected WebElement comboCidade;
-
+    
     // Botão de envio
     @FindBy(id = "submit")
     protected WebElement botaoEnviar;
-
+    
+    //Botão de envio
+    @FindBy(id = "example-modal-sizes-title-lg")
+    protected WebElement mensagemSucesso;
 
     //Botão de envio
     @FindBy(xpath = "//*[@id=\"closeLargeModal\"]")

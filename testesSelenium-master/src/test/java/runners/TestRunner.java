@@ -9,7 +9,9 @@ import org.junit.platform.suite.api.Suite;
 @Suite
 @IncludeEngines("cucumber")
 //@SelectClasspathResource("features")
-@SelectClasspathResource("features/forms.feature")// Feature específica
+//@SelectClasspathResource("features/forms.feature")// Feature específica 
+//@SelectClasspathResource("features/alertsFrameEWindows.feature")// alertsFrameEWindows
+@SelectClasspathResource("features/elements.feature")// elements
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "steps")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, 
                        value = "pretty, html:target/cucumber-reports")

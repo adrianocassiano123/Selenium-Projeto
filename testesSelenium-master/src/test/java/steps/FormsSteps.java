@@ -36,10 +36,11 @@ public class FormsSteps {
     	formPage.preencherSobreNome("Silva");
     	formPage.preencherEmail("teste@accenture.com");
     	formPage.selecionarGenero("M");
-    	formPage.preencherCelular("810000000");
-    	//formPage.preencherDataNascimento(null);
+    	formPage.preencherCelular("8100000000");
+    	formPage.preencherDataNascimento("15", "March", "1995");
     	formPage.preencherSubject("testesssssssssssssssssssssss");
     	formPage.preencherHobby("S");
+    	formPage.escolherUpdate("C:\\Users\\adria\\Downloads\\testesSelenium-master\\testesSelenium-master\\teste.txt");
     	formPage.preencherEndereço("Rua de testes");
     	formPage.selecionarEstado("utt");
     	formPage.selecionarCidade("merr");
@@ -57,6 +58,8 @@ public class FormsSteps {
     
     @Então("sistema exibe mensagem \"Thanks for submitting the form\"")
     public void sistema_exibe_mensagem() {
+    	
+    	formPage.ValidarMensagem("Thanks for submitting the form");
     	
     	formPage.clicarFechar();
        
