@@ -3,12 +3,13 @@
 Funcionalidade: Progress Bar
 
   Cenário: Validar Progress Bar
-    Dado que estou no sistema....
+    Dado que estou no sistema
     E clico na opçao Widgets
-    Quando clico no submenu Progress Bar
-    Quando clico no botão Start
-    Então ordeno os elementos Lista em ordem DECRESCENTE 
-    E ordeno os elementos Lista em ordem CRESCENTE 
-    Quando clico na aba Grid
-    Então ordeno os elementos Grid em ordem DECRESCENTE 
-    E ordeno os elementos em Grid ordem CRESCENTE 
+    E clico no submenu Progress Bar
+    Quando inicio progresso parando antes de 25 porcento   
+    Então valido se valor da progress Bar é menor ou igual a 25 por cento 
+    Quando clico novamente no botão start
+    E valido se chegou em 100 por cento
+    Quando clico no botão resetar
+    Então valido se resetou
+    

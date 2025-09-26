@@ -32,23 +32,23 @@ public class ComandosComuns {
 		element.click();
 
 	}
-	
+
 	public void clicarComScroll(WebElement element) {
-        try {
-            // Rolando até o elemento
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		try {
+			// Rolando até o elemento
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-            // Aguarda o elemento estar clicável
-            WebElement clickable = wait.until(ExpectedConditions.elementToBeClickable(element));
+			// Aguarda o elemento estar clicável
+			WebElement clickable = wait.until(ExpectedConditions.elementToBeClickable(element));
 
-            // Tenta clicar normalmente
-            clickable.click();
+			// Tenta clicar normalmente
+			clickable.click();
 
-        } catch (ElementClickInterceptedException e) {
-            // Se o clique for interceptado (ex: propaganda), força clique via JS
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-        }
-    }
+		} catch (ElementClickInterceptedException e) {
+			// Se o clique for interceptado (ex: propaganda), força clique via JS
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+		}
+	}
 
 	// Método para clicar em um elemento visível e presente no DOM
 	public void clickDOM(WebElement elemento) {
@@ -176,47 +176,45 @@ public class ComandosComuns {
 			System.out.println("Erro ao selecionar data: " + e.getMessage());
 		}
 	}
-	
-	
-	public void validarMensagem(WebElement elemento, String textoEsperado) {
-        wait.until(ExpectedConditions.visibilityOf(elemento));
-        assertEquals(textoEsperado, elemento.getText());
-    }
-	
-	
 
-	
+	public void validarMensagem(WebElement elemento, String textoEsperado) {
+		wait.until(ExpectedConditions.visibilityOf(elemento));
+		assertEquals(textoEsperado, elemento.getText());
+	}
+
 	// Troca o foco para a última aba aberta
 	public void trocarParaNovaAba() {
-	    String janelaPrincipal = driver.getWindowHandle();
-	    Set<String> todasJanelas = driver.getWindowHandles();
+		String janelaPrincipal = driver.getWindowHandle();
+		Set<String> todasJanelas = driver.getWindowHandles();
 
-	    for (String janela : todasJanelas) {
-	        if (!janela.equals(janelaPrincipal)) {
-	            driver.switchTo().window(janela);
-	            break; // já achou a nova aba
-	        }
-	    }
+		for (String janela : todasJanelas) {
+			if (!janela.equals(janelaPrincipal)) {
+				driver.switchTo().window(janela);
+				break; // já achou a nova aba
+			}
+		}
 	}
-	
-	
+
 	// Fecha a aba atual e volta para a principal
 	public void fecharAbaAtualEVolarParaPrincipal() {
-	    String janelaPrincipal = driver.getWindowHandles().iterator().next(); // primeira janela aberta
-	    driver.close(); // fecha a aba atual
-	    driver.switchTo().window(janelaPrincipal); // volta para a principal
-	
-}
-	
-	
-	public void clicarEmTodos(List<WebElement> elementos, By locator) {
-	    while (true) {
-	        List<WebElement> botoes = driver.findElements(locator);
-	        if (botoes.isEmpty()) {
-	            break; // Sai quando não tiver mais botões
-	        }
-	        botoes.get(0).click(); // Sempre clica no primeiro botão da lista
-	    }
+		String janelaPrincipal = driver.getWindowHandles().iterator().next(); // primeira janela aberta
+		driver.close(); // fecha a aba atual
+		driver.switchTo().window(janelaPrincipal); // volta para a principal
+
 	}
-	
+
+	public void clicarEmTodos(List<WebElement> elementos, By locator) {
+		while (true) {
+			List<WebElement> botoes = driver.findElements(locator);
+			if (botoes.isEmpty()) {
+				break; 
+			}
+			botoes.get(0).click(); // Sempre clica no primeiro botão da lista
+		}
+	}
+
+	public String getAtributo(WebElement element, String atributo) {
+		return element.getAttribute(atributo);
+	}
+
 }
