@@ -1,5 +1,7 @@
 package elements;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -43,6 +45,9 @@ public class ElementsElements {
 
     @FindBy(xpath = "(//span[@title='Edit'])[last()]")
     protected WebElement ultimoBtnEditar;
+    
+    @FindBy(xpath = "//span[@title='Delete']")
+    protected List<WebElement> btnDeletarList;
 
     @FindBy(xpath = "(//span[@title='Delete'])[last()]")
     protected WebElement ultimoBtnDeletar;

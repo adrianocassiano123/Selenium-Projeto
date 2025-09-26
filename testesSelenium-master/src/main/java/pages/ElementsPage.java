@@ -1,9 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import elements.ElementsAlertsFrameEWindows;
 import elements.ElementsElements;
 import helpers.ComandosComuns;
 import utils.Urls; // Importa a classe Urls
@@ -62,7 +62,7 @@ public class ElementsPage extends ElementsElements {
 	
 	public void preencherAlterarSalário(String texto) {
 		
-		cc.sendKeys(inputIdade, texto);		
+		cc.sendKeys(inputSalario, texto);		
 	}
 	
 	public void preencherAlterarDepartamento(String texto) {
@@ -72,7 +72,7 @@ public class ElementsPage extends ElementsElements {
 	
 	public void clicarSubmit() {
 		
-		cc.clicarComScroll(btnSubmit);		
+		cc.click(btnSubmit);		
 	}
 	
 	public void clicarBtnEditar() {
@@ -82,7 +82,8 @@ public class ElementsPage extends ElementsElements {
 	
 	public void clicarBtnDeletar() {
 		
-		cc.clicarComScroll(ultimoBtnDeletar);		
+		cc.clicarEmTodos(btnDeletarList, By.xpath("//span[@title='Delete']"));
+			
 	}
 
 }

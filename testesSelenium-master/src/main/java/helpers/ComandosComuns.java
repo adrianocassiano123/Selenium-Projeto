@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Set;
 
 public class ComandosComuns {
@@ -181,6 +182,8 @@ public class ComandosComuns {
         wait.until(ExpectedConditions.visibilityOf(elemento));
         assertEquals(textoEsperado, elemento.getText());
     }
+	
+	
 
 	
 	// Troca o foco para a última aba aberta
@@ -204,5 +207,16 @@ public class ComandosComuns {
 	    driver.switchTo().window(janelaPrincipal); // volta para a principal
 	
 }
+	
+	
+	public void clicarEmTodos(List<WebElement> elementos, By locator) {
+	    while (true) {
+	        List<WebElement> botoes = driver.findElements(locator);
+	        if (botoes.isEmpty()) {
+	            break; // Sai quando não tiver mais botões
+	        }
+	        botoes.get(0).click(); // Sempre clica no primeiro botão da lista
+	    }
+	}
 	
 }
