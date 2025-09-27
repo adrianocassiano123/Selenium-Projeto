@@ -11,5 +11,5 @@ Funcionalidade: Progress Bar
     Quando clico novamente no botão start
     E valido se chegou em 100 por cento
     Quando clico no botão resetar
-    Então valido se resetou
+    Então valido se barra de progresso foi resetada
     
