@@ -43,27 +43,22 @@ public class WidgetsPage extends ElementsWidgets {
 	}
 
 	public void pararAntes(int percentual) {
+	    int margem = 5; // % de segurança
+	    int limiteSeguro = percentual - margem;
 
-		Random random = new Random();
-		int valorParada = random.nextInt(percentual); // valor aleatório menor que o parâmetro
+	    clicarNoBotaoStart(); // inicia a barra
 
-		clicarNoBotaoStart(); // inicia a barra
+	    while (true) {
+	        int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
 
-		while (true) {
-			int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
+	        if (valorAtual >= limiteSeguro) {
+	            clicarNoBotaoStart(); // tenta parar
+	            break;
+	        }
+	    }
 
-			if (valorAtual >= valorParada) {
-				clicarNoBotaoStart();
-				break;
-			}
-
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 	}
+
 
 	public void validarPercentual(int percentual) {
 
@@ -78,33 +73,22 @@ public class WidgetsPage extends ElementsWidgets {
 	}
 
 	public void validarCem() {
-		int valorAtual;
+	    // Espera 5 segundos antes de validar
+	    cc.esperarEmSegundos(15);
 
-		// Espera a barra chegar a 100%
-		while (true) {
-			valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
-			if (valorAtual >= 100) {
-				break;
-			}
+	    int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
 
-			try {
-				Thread.sleep(50); // espera a barra atualizar
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+	    if (valorAtual != 100) {
+	        throw new AssertionError("Erro: a barra não chegou a 100%, valor atual: " + valorAtual + "%");
+	    }
 
-		// Validação usando assert
-		if (valorAtual != 100) {
-			throw new AssertionError("Erro: a barra não chegou a 100%, valor atual: " + valorAtual + "%");
-		}
-
-		System.out.println("Validação OK: barra chegou a 100%");
+	    System.out.println("Validação OK: barra chegou a 100%");
 	}
 
 	public void resetarBarra() {
-		clicarNoBotaoStart(); // clica para parar/reiniciar a barra
+		cc.click(botaoReset);
 		System.out.println("Botão clicado para resetar a barra.");
+		
 	}
 	
 	

@@ -57,7 +57,7 @@ public class WidgetsSteps {
 	@Então("valido se barra de progresso chegou em 100 por cento")
 	public void valido_barra_de_progresso_100() {
 		
-		//widgetsPage.validarCem();
+		widgetsPage.validarCem();
 		
 
 	}
@@ -65,7 +65,7 @@ public class WidgetsSteps {
 	@Quando("clico no botão resetar")
 	public void clico_no_botao_resetar() {
 
-			//widgetsPage.resetarBarra();
+			widgetsPage.resetarBarra();
 		
 
 	}
@@ -73,7 +73,7 @@ public class WidgetsSteps {
 	@Quando("barra de progresso é resetada")
 	public void barra_de_progresso_e_resetada() {
 
-		//widgetsPage.validarReset();
+		widgetsPage.validarReset();
 
 	}
 	

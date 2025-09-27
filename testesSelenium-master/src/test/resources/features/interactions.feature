@@ -7,7 +7,7 @@ Funcionalidade: Ordenação de elementos
     E clico na opçao Interactions
     Quando clico no submenu Sortable
     Então ordeno os elementos Lista em ordem DECRESCENTE 
-    E ordeno os elementos Lista em ordem CRESCENTE 
+	E ordeno os elementos Lista em ordem CRESCENTE
     Quando clico na aba Grid
     Então ordeno os elementos Grid em ordem DECRESCENTE 
     E ordeno os elementos em Grid ordem CRESCENTE 

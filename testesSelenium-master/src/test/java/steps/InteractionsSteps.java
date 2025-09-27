@@ -40,16 +40,16 @@ public class InteractionsSteps {
     @Então("ordeno os elementos Lista em ordem DECRESCENTE")
     public void ordeno_os_elementos_Lista_em_ordem_DECRESCENTE() {
        
-    	interactionsPage.ordenarElementosDecrescenteLista();
+    	interactionsPage.ordenarListas(true);;
     	
     }
     	
-//    E ordeno os elementos Lista em ordem CRESCENTE 
+
     
     @E("ordeno os elementos Lista em ordem CRESCENTE")
     public void ordeno_os_elementos_Lista_em_ordem_CRESCENTE() {
        
-    	interactionsPage.ordenarElementosCrescenteLista();
+    	interactionsPage.ordenarListas(false);
     }
     	
 //    Quando clico na aba Grid
@@ -67,7 +67,7 @@ public class InteractionsSteps {
     @Então("ordeno os elementos Grid em ordem DECRESCENTE")
     public void ordeno_os_elementos_Grid_em_ordem_DECRESCENTE() {
        
-    	interactionsPage.ordenarElementosDecrescenteGrid();
+    	interactionsPage.ordenarElementosGrid(true);
     	
     } 
     	
@@ -76,7 +76,7 @@ public class InteractionsSteps {
     @E("ordeno os elementos em Grid ordem CRESCENTE")
     public void ordeno_os_elementos_Grid_em_ordem_CRESCENTE(){
         
-    	interactionsPage.ordenarElementosCrescenteGrid();
+    	interactionsPage.ordenarElementosGrid(false);
     }
 
 	

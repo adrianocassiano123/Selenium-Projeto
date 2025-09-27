@@ -103,15 +103,6 @@ public class ComandosComuns {
 		driver.get(url);
 	}
 
-	// Método para esperar um tempo fixo
-	public void waitFixed(long milliseconds) {
-		try {
-			Thread.sleep(milliseconds);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
 	// Método para selecionar valor em combo React-Select (DemoQA)
 	public void selecionarCombo(WebElement inputCombo, String valor) {
 		try {
@@ -215,6 +206,15 @@ public class ComandosComuns {
 
 	public String getAtributo(WebElement element, String atributo) {
 		return element.getAttribute(atributo);
+	}
+	
+	public void esperarEmSegundos(int segundos) {
+	    try {
+	        Thread.sleep(segundos * 1000L);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt(); // boa prática: restaurar o estado de interrupção
+	        e.printStackTrace();
+	    }
 	}
 
 }

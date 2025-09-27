@@ -18,6 +18,6 @@ public class ElementsWidgets {
     protected WebElement barraDeProgresso;
 	
     @FindBy(id = "resetButton")
-    protected WebElement btnReset;
+    protected WebElement botaoReset;
 	
 }

@@ -41,6 +41,9 @@ public class ElementsInteractions {
 
     @FindBy(xpath = "//div[@id='demo-tabpane-list']//div[text()='Six']")
     protected WebElement itemSixList;
+    
+    @FindBy(xpath = "//div[@id='demo-tabpane-list']")
+    protected WebElement listaOrdenavel;
 
     
     // Itens da grade (Grid Tab)
