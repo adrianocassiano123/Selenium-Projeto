@@ -11,7 +11,7 @@ public class WidgetsSteps {
 
 	private WidgetsPage widgetsPage = new WidgetsPage(DriverManager.getDriver());
 
-	@Dado("que estou no sistema")
+	@Dado("que estou no  sistema")
 	public void que_estou_no_sistema() {
 
 		widgetsPage.navegarParaPagina();
@@ -22,43 +22,58 @@ public class WidgetsSteps {
 	@E("clico na opçao Widgets")
 	public void clico_na_opçao_Widgets() {
 
-		
+		widgetsPage.clicarNoCardWidgets();
 
 	}
 
 	@E("clico no submenu Progress Bar")
 	public void clico_no_submenu_Progress_Bar() {
 
-		
+		widgetsPage.clicarNoSubMenuProgressBar();
 	}
-
 
 
 	@Quando("inicio progresso parando antes de 25 porcento")
 	public void paro_antes_de_25_porcento() {
 
-		
+		widgetsPage.pararAntes(25);
 
 	}
 	
-	@Então("valido que valor da progress Bar é menor ou igual a 25 por cento")
+	@Então("valido se valor da progress Bar é menor ou igual a 25 por cento")
 	public void valido_que_valor_da_progress_Bar_e_menor_ou_igual_a_25_por_cento() {
 
-		
+		widgetsPage.validarPercentual(25);
 
 	}
 	
 	@Quando("clico novamente no botão start")
 	public void clico_novamente_no_botao_start() {
 
+		widgetsPage.clicarNoBotaoStart();
+
+	}
+	
+	@Então("valido se barra de progresso chegou em 100 por cento")
+	public void valido_barra_de_progresso_100() {
+		
+		//widgetsPage.validarCem();
 		
 
 	}
 	
-	@Então("ao chegar em 100 por cento clico no botão resetar")
-	public void ao_chegar_em_100_por_cento_clico_no_botao_resetar() {
+	@Quando("clico no botão resetar")
+	public void clico_no_botao_resetar() {
 
+			//widgetsPage.resetarBarra();
 		
+
+	}
+	
+	@Quando("barra de progresso é resetada")
+	public void barra_de_progresso_e_resetada() {
+
+		//widgetsPage.validarReset();
 
 	}
 	
