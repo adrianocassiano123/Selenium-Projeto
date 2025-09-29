@@ -3,7 +3,7 @@
 Funcionalidade: Alerts Frame e Windows
 
   Cenário: Validação de nova janela
-    Dado que estou no sistema......
+    Dado que estou no sistema.
     E clico no menu Alerts Frame e Windows
     E clico no submenu Browser Windows
     Quando clico no botao new Window

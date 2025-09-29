@@ -19,7 +19,6 @@ public class InteractionsSteps {
     	
     }
     
-//    E clico na opcao Interactions
 
     @E("clico na opçao Interactions")
     public void clico_na_opcao_Interactions() {
@@ -27,7 +26,6 @@ public class InteractionsSteps {
     	interactionsPage.clicarNoMenuInteractions();
     	
     }
-//    Quando clico no submenu Sortable
     
     @Quando("clico no submenu Sortable")
     public void clico_no_submenu_Sortable() {
@@ -35,7 +33,6 @@ public class InteractionsSteps {
     	interactionsPage.clicarNoMenuSortable();
     }
     	
-//    Então ordeno os elementos Lista em ordem DECRESCENTE 
     	
     @Então("ordeno os elementos Lista em ordem DECRESCENTE")
     public void ordeno_os_elementos_Lista_em_ordem_DECRESCENTE() {
@@ -44,7 +41,6 @@ public class InteractionsSteps {
     	
     }
     	
-
     
     @E("ordeno os elementos Lista em ordem CRESCENTE")
     public void ordeno_os_elementos_Lista_em_ordem_CRESCENTE() {
@@ -52,7 +48,7 @@ public class InteractionsSteps {
     	interactionsPage.ordenarListas(false);
     }
     	
-//    Quando clico na aba Grid
+
     	
     @Quando("clico na aba Grid")
     public void clico_na_aba_Grid() {
@@ -60,9 +56,6 @@ public class InteractionsSteps {
     	interactionsPage.ClicarAbaGrid();
     
     }
-    
-    	
-//    Então ordeno os elementos Grid em ordem DECRESCENTE 
     	
     @Então("ordeno os elementos Grid em ordem DECRESCENTE")
     public void ordeno_os_elementos_Grid_em_ordem_DECRESCENTE() {
@@ -71,7 +64,7 @@ public class InteractionsSteps {
     	
     } 
     	
-//    E ordeno os elementos em Grid ordem CRESCENTE 
+
 
     @E("ordeno os elementos em Grid ordem CRESCENTE")
     public void ordeno_os_elementos_Grid_em_ordem_CRESCENTE(){

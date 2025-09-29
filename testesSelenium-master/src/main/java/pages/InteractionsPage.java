@@ -1,9 +1,6 @@
 package pages;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import elements.ElementsInteractions;
 import helpers.ComandosComuns;
-import io.cucumber.messages.types.Duration;
 import utils.Urls; // Importa a classe Urls
 
 public class InteractionsPage extends ElementsInteractions {
@@ -26,7 +22,6 @@ public class InteractionsPage extends ElementsInteractions {
 		this.cc = new ComandosComuns(driver);
 		PageFactory.initElements(driver, this);
 	}
-	// Navega até a página de login.
 
 	public void navegarParaPagina() {
 		driver.get(Urls.PAGINA); // Usa a URL da classe Urls

@@ -1,7 +1,5 @@
 package pages;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -43,22 +41,21 @@ public class WidgetsPage extends ElementsWidgets {
 	}
 
 	public void pararAntes(int percentual) {
-	    int margem = 5; // % de segurança
-	    int limiteSeguro = percentual - margem;
+		int margem = 5; // % de segurança
+		int limiteSeguro = percentual - margem;
 
-	    clicarNoBotaoStart(); // inicia a barra
+		clicarNoBotaoStart(); // inicia a barra
 
-	    while (true) {
-	        int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
+		while (true) {
+			int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
 
-	        if (valorAtual >= limiteSeguro) {
-	            clicarNoBotaoStart(); // tenta parar
-	            break;
-	        }
-	    }
+			if (valorAtual >= limiteSeguro) {
+				clicarNoBotaoStart(); // tenta parar
+				break;
+			}
+		}
 
 	}
-
 
 	public void validarPercentual(int percentual) {
 
@@ -73,35 +70,32 @@ public class WidgetsPage extends ElementsWidgets {
 	}
 
 	public void validarCem() {
-	    // Espera 5 segundos antes de validar
-	    cc.esperarEmSegundos(15);
+		// Espera 5 segundos antes de validar
+		cc.esperarEmSegundos(15);
 
-	    int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
+		int valorAtual = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
 
-	    if (valorAtual != 100) {
-	        throw new AssertionError("Erro: a barra não chegou a 100%, valor atual: " + valorAtual + "%");
-	    }
+		if (valorAtual != 100) {
+			throw new AssertionError("Erro: a barra não chegou a 100%, valor atual: " + valorAtual + "%");
+		}
 
-	    System.out.println("Validação OK: barra chegou a 100%");
+		System.out.println("Validação OK: barra chegou a 100%");
 	}
 
 	public void resetarBarra() {
 		cc.click(botaoReset);
 		System.out.println("Botão clicado para resetar a barra.");
-		
+
 	}
-	
-	
+
 	public void validarReset() {
-	    int valorDepoisDoReset = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
+		int valorDepoisDoReset = Integer.parseInt(barraDeProgresso.getAttribute("aria-valuenow"));
 
-	    if (valorDepoisDoReset != 0) {
-	        throw new AssertionError(
-	            "Erro: a barra não resetou, valor atual: " + valorDepoisDoReset + "%"
-	        );
-	    }
+		if (valorDepoisDoReset != 0) {
+			throw new AssertionError("Erro: a barra não resetou, valor atual: " + valorDepoisDoReset + "%");
+		}
 
-	    System.out.println("Reset OK: barra voltou para " + valorDepoisDoReset + "%");
+		System.out.println("Reset OK: barra voltou para " + valorDepoisDoReset + "%");
 	}
 
 }

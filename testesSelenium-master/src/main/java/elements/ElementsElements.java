@@ -41,19 +41,26 @@ public class ElementsElements {
     @FindBy(id = "submit")
     protected WebElement btnSubmit;
 
-    // ===== CAMPOS DA TABELA (EXISTENTES) =====
-
+ 
     @FindBy(xpath = "(//span[@title='Edit'])[last()]")
     protected WebElement ultimoBtnEditar;
     
-    @FindBy(xpath = "//span[@title='Delete']")
-    protected List<WebElement> btnDeletarList;
 
     @FindBy(xpath = "(//span[@title='Delete'])[last()]")
     protected WebElement ultimoBtnDeletar;
 
     @FindBy(xpath = "(//div[@class='rt-tr-group'])[last()]")
     protected WebElement ultimaLinhaTabela;
+    
+    
+
+    // Lista de botões de delete dentro de todas as linhas
+    @FindBy(xpath = "//div[@class='rt-tr-group']//span[@title='Delete']")
+    protected List<WebElement> btnDeletarList;
+
+    //Linhas da tabela
+    @FindBy(xpath = "//div[@class='rt-tr-group']")
+    protected List<WebElement> linhasTabela;
 
     
 }

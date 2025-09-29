@@ -16,9 +16,9 @@ public class DriverManager {
 	}
 
 	public static void quitDriver() { //Fecha a tela ao finalizar
-//		if (driver != null) {
-//			driver.quit();
-//			driver = null;
-//		}
+		if (driver != null) {
+			driver.quit();
+			driver = null;
+		}
 	}
 }

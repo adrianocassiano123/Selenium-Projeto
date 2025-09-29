@@ -6,24 +6,21 @@ import org.openqa.selenium.support.FindBy;
 public class ElementsInteractions {
 	
 	
-	// Interactions
+	
 	@FindBy(xpath = "//h5[text()='Interactions']")
 	protected WebElement cardInteractions;
 	
 	@FindBy(xpath = "//div[@class='element-list collapse show']//span[text()='Sortable']")
 	protected WebElement menuSortable;
 		
-		
-    // Aba "List"
     @FindBy(id = "demo-tab-list")
     protected WebElement abaList;
 
-    // Aba "Grid"
+    
     @FindBy(id = "demo-tab-grid")
     protected WebElement abaGrid;
     
 
-    // Itens da lista (List Tab)
     @FindBy(xpath = "//div[@id='demo-tabpane-list']//div[text()='One']")
     protected WebElement itemOneList;
 
